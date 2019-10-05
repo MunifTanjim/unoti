@@ -8,4 +8,4 @@
 
 - Initial release
 
-[unreleased]: https://github.com/MunifTanjim/unoti/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/MunifTanjim/unoti/compare/0.1.0...HEAD
