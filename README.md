@@ -1,6 +1,6 @@
 # uNoti
 
-Universal Notification
+Unified Notification
 
 ## Installation
 
