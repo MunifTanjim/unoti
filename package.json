@@ -1,6 +1,6 @@
 {
   "name": "unoti",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Unified Notification",
   "keywords": [
     "notification"
@@ -42,6 +42,5 @@
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   },
-  "dependencies": {},
-  "private": true
+  "dependencies": {}
 }
