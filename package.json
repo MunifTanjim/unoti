@@ -20,8 +20,12 @@
     "prepare": "npm run build",
     "test": "jest"
   },
+  "dependencies": {
+    "lodash.defaultsdeep": "^4.6.1"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.18",
+    "@types/lodash.defaultsdeep": "^4.6.6",
     "@typescript-eslint/eslint-plugin": "^2.3.3-alpha.1",
     "@typescript-eslint/parser": "^2.3.2",
     "bili": "^4.8.1",
@@ -41,6 +45,5 @@
     "rollup-plugin-typescript2": "^0.24.3",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
-  },
-  "dependencies": {}
+  }
 }

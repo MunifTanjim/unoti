@@ -11,7 +11,9 @@ module.exports = {
     createDefaultProgram: true
   },
   rules: {
+    '@typescript-eslint/consistent-type-assertions': 'warn',
     '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'warn'
   }
 }
