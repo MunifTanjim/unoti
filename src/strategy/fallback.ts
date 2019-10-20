@@ -9,7 +9,7 @@ async function sendWithFallbackStrategy<T>(
   const [provider, ...remainingProviders] = providers
 
   if (typeof provider === 'undefined') {
-    throw new Error('FAILED')
+    throw new Error('uNoti: SEND_FAILURE')
   }
 
   try {

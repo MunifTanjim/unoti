@@ -9,7 +9,7 @@ export function randomStrategy<T>(
   const provider = providers[index]
 
   if (typeof provider === 'undefined') {
-    throw new Error('FAILED')
+    throw new Error('uNoti: SEND_FAILURE')
   }
 
   return async params => {
