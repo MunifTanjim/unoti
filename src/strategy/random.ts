@@ -12,12 +12,12 @@ export function randomStrategy<T>(
     throw new Error('uNoti: SEND_FAILURE')
   }
 
-  return async params => {
+  return async (params) => {
     const response = await provider.send(params)
 
     return {
       ...response,
-      providerId: provider.id
+      providerId: provider.id,
     }
   }
 }

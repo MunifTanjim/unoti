@@ -13,6 +13,6 @@ export type NotiTemplateRenderer = (
 
 const readFile = util.promisify(fs.readFile)
 
-export const renderRaw: NotiTemplateRenderer = async templatePath => {
-  return readFile(templatePath, { encoding: 'utf8' })
+export const renderRaw: NotiTemplateRenderer = async (templatePath) => {
+  return await readFile(templatePath, { encoding: 'utf8' })
 }

@@ -36,8 +36,8 @@ const defaultConfig: NotiTemplateConfig = {
   data: {},
   options: {},
   renderer: {
-    '': renderRaw
-  }
+    '': renderRaw,
+  },
 }
 
 export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
@@ -58,10 +58,7 @@ export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
 
     const templateFilename = path.basename(templatePath)
 
-    const templateType = templateFilename
-      .split('.')
-      .slice(1)
-      .join('.')
+    const templateType = templateFilename.split('.').slice(1).join('.')
 
     const templateRenderer = templateConfig.renderer[templateType]
 
@@ -75,11 +72,15 @@ export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
       templateConfig.options
     )
 
-    return templateRenderer(templatePath, templateData, templateRendererOptions)
+    return await templateRenderer(
+      templatePath,
+      templateData,
+      templateRendererOptions
+    )
   }
 
   return {
     templateMap,
-    render
+    render,
   }
 }

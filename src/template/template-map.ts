@@ -14,7 +14,7 @@ const dirLevels = { CHANNEL: 0, TOPIC: 1, PARAM: 2 }
 export function getTemplateMapKey({
   channel,
   topic,
-  param
+  param,
 }: NotiTemplateIdentifier): string {
   return `${channel}--${topic}--${param}`
 }

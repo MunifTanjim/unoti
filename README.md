@@ -19,25 +19,25 @@ const { NotiChannel, fallbackStrategy } = require('unoti')
 
 const smsProviderOne = {
   id: 'sms-provider-one',
-  send: async params => {
+  send: async (params) => {
     let id
     // Call the SMS provider service using `params` values
     return {
-      id
+      id,
     }
-  }
+  },
 }
 
 const smsChannel = NotiChannel({
   id: 'sms',
   providers: [smsProviderOne],
-  strategy: fallbackStrategy
+  strategy: fallbackStrategy,
 })
 
 smsChannel
   .send(params)
-  .then(response => console.log(response))
-  .catch(err => console.error(err))
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err))
 ```
 
 ## License

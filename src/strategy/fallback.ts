@@ -17,17 +17,17 @@ async function sendWithFallbackStrategy<T>(
 
     return {
       ...response,
-      providerId: provider.id
+      providerId: provider.id,
     }
   } catch (err) {
     console.error(err)
 
-    return sendWithFallbackStrategy(params, remainingProviders)
+    return await sendWithFallbackStrategy(params, remainingProviders)
   }
 }
 
 export function fallbackStrategy<T>(
   providers: Array<NotiProvider<T>>
 ): NotiStrategicSender<T> {
-  return async params => sendWithFallbackStrategy(params, providers)
+  return async (params) => await sendWithFallbackStrategy(params, providers)
 }

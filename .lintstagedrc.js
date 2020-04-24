@@ -1,4 +1,4 @@
 module.exports = {
   '**/*.ts': () => 'tsc -p tsconfig.json --noEmit',
-  'src/**/*.ts': ['eslint']
+  'src/**/*.ts': ['eslint'],
 }
