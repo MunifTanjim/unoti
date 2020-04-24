@@ -26,9 +26,9 @@ export function NotiChannel<NotiParams>(
 ): NotiChannel<NotiParams> {
   const { id, providers, strategy } = config
 
-  const send: NotiChannelSender<NotiParams> = async (params) => {
-    const strategicSend = strategy(providers)
+  const strategicSend = strategy(providers)
 
+  const send: NotiChannelSender<NotiParams> = async (params) => {
     const respnose = await strategicSend(params)
 
     return {
