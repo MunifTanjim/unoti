@@ -1,9 +1,10 @@
 {
   "name": "unoti",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Unified Notification",
   "keywords": [
-    "notification"
+    "notification",
+    "template"
   ],
   "homepage": "https://github.com/MunifTanjim/unoti#readme",
   "bugs": "https://github.com/MunifTanjim/unoti/issues",
