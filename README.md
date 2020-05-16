@@ -1,3 +1,6 @@
+[![Version](https://img.shields.io/npm/v/unoti?style=for-the-badge)](https://npmjs.org/package/unoti)
+[![License](https://img.shields.io/github/license/MunifTanjim/unoti?style=for-the-badge)](https://github.com/MunifTanjim/unoti/blob/master/LICENSE)
+
 # uNoti
 
 Unified Notification
