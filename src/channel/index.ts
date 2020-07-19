@@ -2,7 +2,7 @@ type NotiProvider<T> = import('../provider').NotiProvider<T>
 type NotiStrategy<T> = import('../strategy').NotiStrategy<T>
 type NotiStrategicSenderResponse = import('../strategy').NotiStrategicSenderResponse
 
-export type NotiChannel<NotiParams> = {
+export interface NotiChannel<NotiParams> {
   id: string
   send: NotiChannelSender<NotiParams>
 }
@@ -13,7 +13,7 @@ export type NotiChannelConfig<NotiParams> = {
   strategy: NotiStrategy<NotiParams>
 }
 
-export type NotiChannelSenderResponse = NotiStrategicSenderResponse & {
+export interface NotiChannelSenderResponse extends NotiStrategicSenderResponse {
   channelId: string
 }
 

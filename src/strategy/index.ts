@@ -5,7 +5,8 @@ export type NotiStrategy<NotiParams> = (
   providers: Array<NotiProvider<NotiParams>>
 ) => NotiStrategicSender<NotiParams>
 
-export type NotiStrategicSenderResponse = NotiProviderSenderResponse & {
+export interface NotiStrategicSenderResponse
+  extends NotiProviderSenderResponse {
   providerId: string
 }
 
