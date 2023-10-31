@@ -1,7 +1,5 @@
-type NotiProvider<T> = import('../provider').NotiProvider<T>
-type NotiStrategy<T> = import('../strategy').NotiStrategy<T>
-type NotiStrategicSenderResponse =
-  import('../strategy').NotiStrategicSenderResponse
+import type { NotiProvider } from '../provider'
+import type { NotiStrategicSenderResponse, NotiStrategy } from '../strategy'
 
 export interface NotiChannel<NotiParams> {
   id: string

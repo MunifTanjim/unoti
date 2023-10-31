@@ -1,7 +1,8 @@
-type NotiProvider<T> = import('../provider').NotiProvider<T>
-type NotiStrategicSender<T> = import('../strategy').NotiStrategicSender<T>
-type NotiStrategicSenderResponse =
-  import('../strategy').NotiStrategicSenderResponse
+import type { NotiProvider } from '../provider'
+import type {
+  NotiStrategicSender,
+  NotiStrategicSenderResponse,
+} from '../strategy'
 
 async function sendWithFallbackStrategy<T>(
   params: T,

@@ -1,15 +1,13 @@
 import defaultsDeep from 'lodash.defaultsdeep'
 import path from 'path'
+import type {
+  NotiTemplateData,
+  NotiTemplateRenderer,
+  NotiTemplateRendererOptions,
+} from './renderer'
 import { renderRaw } from './renderer'
+import type { NotiTemplateIdentifier, NotiTemplateMap } from './template-map'
 import { getTemplateMap, getTemplateMapKey } from './template-map'
-
-type NotiTemplateRenderer = import('./renderer').NotiTemplateRenderer
-type NotiTemplateData = import('./renderer').NotiTemplateData
-type NotiTemplateRendererOptions =
-  import('./renderer').NotiTemplateRendererOptions
-
-type NotiTemplateIdentifier = import('./template-map').NotiTemplateIdentifier
-type NotiTemplateMap = import('./template-map').NotiTemplateMap
 
 export type NotiTemplate = {
   templateMap: NotiTemplateMap

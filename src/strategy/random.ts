@@ -1,5 +1,5 @@
-type NotiProvider<T> = import('../provider').NotiProvider<T>
-type NotiStrategicSender<T> = import('../strategy').NotiStrategicSender<T>
+import type { NotiProvider } from '../provider'
+import type { NotiStrategicSender } from '../strategy'
 
 export function randomStrategy<T>(
   providers: Array<NotiProvider<T>>,

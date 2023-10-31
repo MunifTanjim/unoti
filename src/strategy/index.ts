@@ -1,6 +1,4 @@
-type NotiProvider<T> = import('../provider').NotiProvider<T>
-type NotiProviderSenderResponse =
-  import('../provider').NotiProviderSenderResponse
+import type { NotiProvider, NotiProviderSenderResponse } from '../provider'
 
 export type NotiStrategy<NotiParams> = (
   providers: Array<NotiProvider<NotiParams>>,
