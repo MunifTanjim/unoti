@@ -1,4 +1,6 @@
+[![GitHub Workflow Status: CI](https://img.shields.io/github/actions/workflow/status/MunifTanjim/unoti/ci.yml?label=CI&style=for-the-badge)](https://github.com/MunifTanjim/unoti/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/npm/v/unoti?style=for-the-badge)](https://npmjs.org/package/unoti)
+[![Coverage](https://img.shields.io/codecov/c/gh/MunifTanjim/unoti?style=for-the-badge)](https://codecov.io/gh/MunifTanjim/unoti)
 [![License](https://img.shields.io/github/license/MunifTanjim/unoti?style=for-the-badge)](https://github.com/MunifTanjim/unoti/blob/master/LICENSE)
 
 # uNoti
