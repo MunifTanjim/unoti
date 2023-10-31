@@ -1,10 +1,11 @@
 type NotiProvider<T> = import('../provider').NotiProvider<T>
 type NotiStrategicSender<T> = import('../strategy').NotiStrategicSender<T>
-type NotiStrategicSenderResponse = import('../strategy').NotiStrategicSenderResponse
+type NotiStrategicSenderResponse =
+  import('../strategy').NotiStrategicSenderResponse
 
 async function sendWithFallbackStrategy<T>(
   params: T,
-  providers: Array<NotiProvider<T>>
+  providers: Array<NotiProvider<T>>,
 ): Promise<NotiStrategicSenderResponse> {
   const [provider, ...remainingProviders] = providers
 
@@ -27,7 +28,7 @@ async function sendWithFallbackStrategy<T>(
 }
 
 export function fallbackStrategy<T>(
-  providers: Array<NotiProvider<T>>
+  providers: Array<NotiProvider<T>>,
 ): NotiStrategicSender<T> {
   return async (params) => await sendWithFallbackStrategy(params, providers)
 }

@@ -71,7 +71,7 @@ type NotiTemplateRenderer = import('unoti').NotiTemplateRenderer
 const pugRenderer: NotiTemplateRenderer = async (
   templatePath,
   data,
-  options = {}
+  options = {},
 ) => {
   const content = pug.renderFile(templatePath, { ...data, ...options.pug })
   return Promise.resolve(content)
@@ -115,7 +115,7 @@ function sendSms({ to, text = '', template }: SendSMSOptions) {
     params.text = await notiTemplate.render(
       { channel: 'sms', topic: template.topic, param: 'text' },
       template.data,
-      template.options
+      template.options,
     )
   }
 

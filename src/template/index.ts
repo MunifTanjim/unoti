@@ -5,7 +5,8 @@ import { getTemplateMap, getTemplateMapKey } from './template-map'
 
 type NotiTemplateRenderer = import('./renderer').NotiTemplateRenderer
 type NotiTemplateData = import('./renderer').NotiTemplateData
-type NotiTemplateRendererOptions = import('./renderer').NotiTemplateRendererOptions
+type NotiTemplateRendererOptions =
+  import('./renderer').NotiTemplateRendererOptions
 
 type NotiTemplateIdentifier = import('./template-map').NotiTemplateIdentifier
 type NotiTemplateMap = import('./template-map').NotiTemplateMap
@@ -15,7 +16,7 @@ export type NotiTemplate = {
   render: (
     indentifier: NotiTemplateIdentifier,
     data?: NotiTemplateData,
-    options?: NotiTemplateRendererOptions
+    options?: NotiTemplateRendererOptions,
   ) => ReturnType<NotiTemplateRenderer>
 }
 
@@ -48,7 +49,7 @@ export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
   const render: NotiTemplate['render'] = async (
     identifier,
     data = {},
-    options = {}
+    options = {},
   ) => {
     const templatePath = templateMap.get(getTemplateMapKey(identifier))
 
@@ -69,13 +70,13 @@ export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
     const templateData = defaultsDeep(data, templateConfig.data)
     const templateRendererOptions = defaultsDeep(
       options,
-      templateConfig.options
+      templateConfig.options,
     )
 
     return await templateRenderer(
       templatePath,
       templateData,
-      templateRendererOptions
+      templateRendererOptions,
     )
   }
 

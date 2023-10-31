@@ -2,7 +2,7 @@ type NotiProvider<T> = import('../provider').NotiProvider<T>
 type NotiStrategicSender<T> = import('../strategy').NotiStrategicSender<T>
 
 export function randomStrategy<T>(
-  providers: Array<NotiProvider<T>>
+  providers: Array<NotiProvider<T>>,
 ): NotiStrategicSender<T> {
   const index = Math.floor(Math.random() * providers.length)
 

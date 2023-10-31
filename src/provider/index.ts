@@ -3,7 +3,7 @@ export interface NotiProviderSenderResponse {
 }
 
 export type NotiProviderSender<NotiParams> = (
-  params: NotiParams
+  params: NotiParams,
 ) => Promise<NotiProviderSenderResponse>
 
 export interface NotiProvider<NotiParams> {

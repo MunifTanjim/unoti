@@ -1,27 +1,19 @@
 # Changelog
 
-## [Unreleased]
+## 0.1.0 (2019-10-05)
 
-- ...
+* Initial release
 
-## [0.4.0] - 2020-07-19
+## [0.2.0](https://github.com/MunifTanjim/unoti/compare/0.1.0...0.2.0) (2019-10-20)
 
-- Tweak types
+* Tweak error message
+* Add NotiTemplate
 
-## [0.3.0] - 2020-04-24
+## [0.3.0](https://github.com/MunifTanjim/unoti/compare/0.2.0...0.3.0) (2020-04-24)
 
-- Minor Improvements
+* Minor Improvements
 
-## [0.2.0] - 2019-10-20
+## [0.4.0](https://github.com/MunifTanjim/unoti/compare/0.3.0...0.4.0) (2020-07-19)
 
-- Tweak error message
-- Add NotiTemplate
+* Tweak types
 
-## 0.1.0 - 2019-10-05
-
-- Initial release
-
-[unreleased]: https://github.com/MunifTanjim/unoti/compare/0.4.0...HEAD
-[0.4.0]: https://github.com/MunifTanjim/unoti/compare/0.3.0...0.4.0
-[0.3.0]: https://github.com/MunifTanjim/unoti/compare/0.2.0...0.3.0
-[0.2.0]: https://github.com/MunifTanjim/unoti/compare/0.1.0...0.2.0

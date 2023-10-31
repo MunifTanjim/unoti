@@ -1,8 +1,9 @@
 type NotiProvider<T> = import('../provider').NotiProvider<T>
-type NotiProviderSenderResponse = import('../provider').NotiProviderSenderResponse
+type NotiProviderSenderResponse =
+  import('../provider').NotiProviderSenderResponse
 
 export type NotiStrategy<NotiParams> = (
-  providers: Array<NotiProvider<NotiParams>>
+  providers: Array<NotiProvider<NotiParams>>,
 ) => NotiStrategicSender<NotiParams>
 
 export interface NotiStrategicSenderResponse
@@ -11,7 +12,7 @@ export interface NotiStrategicSenderResponse
 }
 
 export type NotiStrategicSender<NotiParams> = (
-  params: NotiParams
+  params: NotiParams,
 ) => Promise<NotiStrategicSenderResponse>
 
 export * from './fallback'

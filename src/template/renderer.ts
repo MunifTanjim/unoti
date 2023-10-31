@@ -8,7 +8,7 @@ export type NotiTemplateRendererOptions = Record<string, any>
 export type NotiTemplateRenderer = (
   templatePath: string,
   data?: NotiTemplateData,
-  options?: NotiTemplateRendererOptions
+  options?: NotiTemplateRendererOptions,
 ) => Promise<string>
 
 const readFile = util.promisify(fs.readFile)

@@ -23,7 +23,7 @@ export function getTemplateMap(
   dirPath: string,
   dirLevel: number = 0,
   channel?: string,
-  topic?: string
+  topic?: string,
 ): NotiTemplateMap {
   const templateMap = new Map<string, string>()
 
@@ -44,7 +44,7 @@ export function getTemplateMap(
 
       templateMap.set(
         getTemplateMapKey(templateIdentifier as NotiTemplateIdentifier),
-        currentPath
+        currentPath,
       )
 
       continue
@@ -55,7 +55,7 @@ export function getTemplateMap(
         currentPath,
         dirLevel + 1,
         dirLevel === dirLevels.CHANNEL ? currentName : channel,
-        dirLevel === dirLevels.TOPIC ? currentName : topic
+        dirLevel === dirLevels.TOPIC ? currentName : topic,
       )
 
       for (const [key, value] of map.entries()) {

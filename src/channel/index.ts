@@ -1,6 +1,7 @@
 type NotiProvider<T> = import('../provider').NotiProvider<T>
 type NotiStrategy<T> = import('../strategy').NotiStrategy<T>
-type NotiStrategicSenderResponse = import('../strategy').NotiStrategicSenderResponse
+type NotiStrategicSenderResponse =
+  import('../strategy').NotiStrategicSenderResponse
 
 export interface NotiChannel<NotiParams> {
   id: string
@@ -18,11 +19,11 @@ export interface NotiChannelSenderResponse extends NotiStrategicSenderResponse {
 }
 
 export type NotiChannelSender<NotiParams> = (
-  params: NotiParams
+  params: NotiParams,
 ) => Promise<NotiChannelSenderResponse>
 
 export function NotiChannel<NotiParams>(
-  config: NotiChannelConfig<NotiParams>
+  config: NotiChannelConfig<NotiParams>,
 ): NotiChannel<NotiParams> {
   const { id, providers, strategy } = config
 
