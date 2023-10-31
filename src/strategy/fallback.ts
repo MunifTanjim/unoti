@@ -1,3 +1,4 @@
+import { NotiChannelError, NotiProviderError } from '../error'
 import type { NotiProvider } from '../provider'
 import type {
   NotiStrategicSender,
@@ -6,12 +7,18 @@ import type {
 
 async function sendWithFallbackStrategy<T>(
   params: T,
+  channelId: string,
   providers: Array<NotiProvider<T>>,
+  errors: NotiProviderError[] = [],
 ): Promise<NotiStrategicSenderResponse> {
   const [provider, ...remainingProviders] = providers
 
   if (typeof provider === 'undefined') {
-    throw new Error('uNoti: SEND_FAILURE')
+    throw new NotiChannelError(
+      'channel_send_failure',
+      'Failed to send with fallback strategy',
+      { errors, metadata: { channelId } },
+    )
   }
 
   try {
@@ -22,14 +29,25 @@ async function sendWithFallbackStrategy<T>(
       providerId: provider.id,
     }
   } catch (err) {
-    console.error(err)
-
-    return await sendWithFallbackStrategy(params, remainingProviders)
+    errors.push(
+      NotiProviderError.create(err, 'provider_send_failure', {
+        metadata: { channelId, providerId: provider.id },
+      }),
+    )
+    return await sendWithFallbackStrategy(
+      params,
+      channelId,
+      remainingProviders,
+      errors,
+    )
   }
 }
 
 export function fallbackStrategy<T>(
+  channelId: string,
   providers: Array<NotiProvider<T>>,
 ): NotiStrategicSender<T> {
-  return async (params) => await sendWithFallbackStrategy(params, providers)
+  return async (params) => {
+    return await sendWithFallbackStrategy(params, channelId, providers)
+  }
 }
