@@ -51,7 +51,6 @@ for (const testCase of [
     },
     fromError(error: unknown) {
       return this.cls.create(error, this.code, {
-        metadata: this.metadata,
         errors: [this.error],
       })
     },
@@ -174,7 +173,7 @@ for (const testCase of [
 
       expect(error.errors).toMatchObject([testCase.error])
 
-      expect(error.metadata).toMatchObject(testCase.metadata)
+      expect(error.metadata).toMatchObject({})
     })
 
     it('can be created from unknown', () => {
@@ -193,7 +192,7 @@ for (const testCase of [
 
       expect(error.errors).toMatchObject([testCase.error])
 
-      expect(error.metadata).toMatchObject(testCase.metadata)
+      expect(error.metadata).toMatchObject({})
     })
   })
 }
