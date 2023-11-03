@@ -24,3 +24,10 @@
 
 * introduce NotiError ([3a6eb94](https://github.com/MunifTanjim/unoti/commit/3a6eb947fbe24b8dd268b964d8fa51c3e9cd7b78))
 
+## [0.5.1](https://github.com/MunifTanjim/unoti/compare/0.5.0...0.5.1) (2023-11-03)
+
+
+### Features
+
+* export errors ([d37cfb8](https://github.com/MunifTanjim/unoti/commit/d37cfb8a94105ec5ba2c2b64baa80f5447eaae6e))
+
