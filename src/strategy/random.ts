@@ -6,19 +6,19 @@ export function randomStrategy<T>(
   channelId: string,
   providers: Array<NotiProvider<T>>,
 ): NotiStrategicSender<T> {
-  const index = Math.floor(Math.random() * providers.length)
-
-  const provider = providers[index]
-
-  if (typeof provider === 'undefined') {
-    throw new NotiChannelError(
-      'channel_send_failure',
-      'Failed to pick provider with random strategy',
-      { metadata: { channelId } },
-    )
-  }
-
   return async (params) => {
+    const index = Math.floor(Math.random() * providers.length)
+
+    const provider = providers[index]
+
+    if (typeof provider === 'undefined') {
+      throw new NotiChannelError(
+        'channel_send_failure',
+        'Failed to pick provider with random strategy',
+        { metadata: { channelId } },
+      )
+    }
+
     try {
       const response = await provider.send(params)
 
