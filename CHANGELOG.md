@@ -31,3 +31,10 @@
 
 * export errors ([d37cfb8](https://github.com/MunifTanjim/unoti/commit/d37cfb8a94105ec5ba2c2b64baa80f5447eaae6e))
 
+## [0.5.2](https://github.com/MunifTanjim/unoti/compare/0.5.1...0.5.2) (2024-07-25)
+
+
+### Bug Fixes
+
+* **strategy:** pick random provider when sending ([eab6d87](https://github.com/MunifTanjim/unoti/commit/eab6d87306bda8399ee0a3c9e6380db231642e5f))
+
