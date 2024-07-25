@@ -14,17 +14,21 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          cache: 'yarn'
+          cache: 'pnpm'
       - name: Setup Dependencies
-        run: yarn --frozen-lockfile
+        run: pnpm install
       - name: Build Package
-        run: yarn run build
+        run: pnpm run build
       - name: Run Tests
-        run: yarn run test --ci --coverage
+        run: pnpm run test --ci --coverage
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v4
         with:

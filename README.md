@@ -17,11 +17,14 @@ Unified Notification
 ## Installation
 
 ```sh
-# using yarn:
-yarn add unoti
+# using pnpm:
+pnpm add unoti
 
 # using npm:
 npm install --save unoti
+
+# using yarn:
+yarn add unoti
 ```
 
 ## Usage
