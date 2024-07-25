@@ -2,10 +2,10 @@
 
 set -eu
 
-yarn run test
+pnpm run test
 
 prev_version=$(npx -c 'echo $npm_package_version')
-yarn version --no-git-tag-version "$@"
+pnpm version --no-git-tag-version "$@"
 curr_version=$(npx -c 'echo $npm_package_version')
 
 if [ "${curr_version}" = "${prev_version}" ]; then

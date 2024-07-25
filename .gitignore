@@ -16,5 +16,3 @@ node_modules
 
 # Others
 coverage
-package-lock.json
-yarn.lock
