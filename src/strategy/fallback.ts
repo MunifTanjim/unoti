@@ -43,11 +43,8 @@ async function sendWithFallbackStrategy<T>(
   }
 }
 
-export function fallbackStrategy<T>(
-  channelId: string,
-  providers: Array<NotiProvider<T>>,
-): NotiStrategicSender<T> {
-  return async (params) => {
+export function fallbackStrategy<T>(channelId: string): NotiStrategicSender<T> {
+  return async (params, providers) => {
     return await sendWithFallbackStrategy(params, channelId, providers)
   }
 }

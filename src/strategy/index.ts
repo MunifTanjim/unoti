@@ -2,7 +2,6 @@ import type { NotiProvider, NotiProviderSenderResponse } from '../provider'
 
 export type NotiStrategy<NotiParams> = (
   channelId: string,
-  providers: Array<NotiProvider<NotiParams>>,
 ) => NotiStrategicSender<NotiParams>
 
 export interface NotiStrategicSenderResponse
@@ -12,6 +11,7 @@ export interface NotiStrategicSenderResponse
 
 export type NotiStrategicSender<NotiParams> = (
   params: NotiParams,
+  providers: Array<NotiProvider<NotiParams>>,
 ) => Promise<NotiStrategicSenderResponse>
 
 export * from './fallback'
