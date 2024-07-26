@@ -38,3 +38,11 @@
 
 * **strategy:** pick random provider when sending ([eab6d87](https://github.com/MunifTanjim/unoti/commit/eab6d87306bda8399ee0a3c9e6380db231642e5f))
 
+## [0.6.0](https://github.com/MunifTanjim/unoti/compare/0.5.2...0.6.0) (2024-07-26)
+
+
+### Features
+
+* **channel:** support dynamic providers ([076cc14](https://github.com/MunifTanjim/unoti/commit/076cc14b86da29d66a79025dcd8b4769122f123c))
+* remove lodash.defaultsdeep dependency ([c222dba](https://github.com/MunifTanjim/unoti/commit/c222dbace4e06647eaf96cd508fc43f53a28e37b))
+
