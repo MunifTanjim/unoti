@@ -18,21 +18,19 @@
   "files": [
     "lib"
   ],
-  "source": "src/index.ts",
-  "main": "lib/index.js",
-  "module": "lib/index.module.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/MunifTanjim/unoti"
   },
   "scripts": {
-    "prebuild": "rimraf lib/*",
-    "build": "microbundle --format cjs,es --target node",
+    "build": "pkgroll --clean-dist --dist=./lib --export-condition=node",
     "changelog": "conventional-changelog --config .changelogrc.js -i CHANGELOG.md -s -a",
     "postchangelog": "git add CHANGELOG.md",
     "commit": "cz",
-    "dev": "microbundle watch --format cjs,es --target node",
+    "dev": "pnpm run build --watch",
     "lint:commit:current": "commitlint --edit",
     "lint:staged": "lint-staged",
     "prepare": "husky install",
@@ -59,9 +57,8 @@
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^14.0.1",
-    "microbundle": "^0.15.1",
+    "pkgroll": "^2.4.1",
     "prettier": "^3.0.3",
-    "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   }
