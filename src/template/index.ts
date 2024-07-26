@@ -1,4 +1,3 @@
-import defaultsDeep from 'lodash.defaultsdeep'
 import path from 'path'
 import { NotiTemplateError } from '../error'
 import type {
@@ -9,6 +8,7 @@ import type {
 import { renderRaw } from './renderer'
 import type { NotiTemplateIdentifier, NotiTemplateMap } from './template-map'
 import { getTemplateMap, getTemplateMapKey } from './template-map'
+import { defaults } from './util'
 
 export type NotiTemplate = {
   templateMap: NotiTemplateMap
@@ -31,17 +31,17 @@ export type NotiTemplateConfig = {
 export * from './renderer'
 export * from './template-map'
 
-const defaultConfig: NotiTemplateConfig = {
+const defaultConfig = {
   path: path.resolve('templates'),
   data: {},
   options: {},
   renderer: {
     '': renderRaw,
   },
-}
+} satisfies NotiTemplateConfig
 
-export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
-  const templateConfig: NotiTemplateConfig = defaultsDeep(config, defaultConfig)
+export function NotiTemplate(config: NotiTemplateConfig): NotiTemplate {
+  const templateConfig = defaults(config, defaultConfig)
 
   const templateMap = getTemplateMap(templateConfig.path)
 
@@ -77,11 +77,8 @@ export function NotiTemplate(config?: NotiTemplateConfig): NotiTemplate {
         )
       }
 
-      const templateData = defaultsDeep(data, templateConfig.data)
-      const templateRendererOptions = defaultsDeep(
-        options,
-        templateConfig.options,
-      )
+      const templateData = defaults(data, templateConfig.data)
+      const templateRendererOptions = defaults(options, templateConfig.options)
 
       return await templateRenderer(
         templatePath,
