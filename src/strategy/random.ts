@@ -1,12 +1,8 @@
 import { NotiChannelError, NotiProviderError } from '../error'
-import type { NotiProvider } from '../provider'
 import type { NotiStrategicSender } from '../strategy'
 
-export function randomStrategy<T>(
-  channelId: string,
-  providers: Array<NotiProvider<T>>,
-): NotiStrategicSender<T> {
-  return async (params) => {
+export function randomStrategy<T>(channelId: string): NotiStrategicSender<T> {
+  return async (params, providers) => {
     const index = Math.floor(Math.random() * providers.length)
 
     const provider = providers[index]

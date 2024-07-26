@@ -8,7 +8,9 @@ export interface NotiChannel<NotiParams> {
 
 export type NotiChannelConfig<NotiParams> = {
   id: string
-  providers: Array<NotiProvider<NotiParams>>
+  providers:
+    | Array<NotiProvider<NotiParams>>
+    | ((params: NotiParams) => Promise<Array<NotiProvider<NotiParams>>>)
   strategy: NotiStrategy<NotiParams>
 }
 
@@ -25,10 +27,13 @@ export function NotiChannel<NotiParams>(
 ): NotiChannel<NotiParams> {
   const { id, providers, strategy } = config
 
-  const strategicSend = strategy(id, providers)
+  const strategicSend = strategy(id)
 
   const send: NotiChannelSender<NotiParams> = async (params) => {
-    const respnose = await strategicSend(params)
+    const respnose = await strategicSend(
+      params,
+      typeof providers === 'function' ? await providers(params) : providers,
+    )
 
     return {
       ...respnose,
